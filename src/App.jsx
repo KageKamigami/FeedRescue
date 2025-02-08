@@ -1,18 +1,6 @@
 import { Link } from "react-router-dom"; // Import Link
 import HomePageBanner from "./assets/FoodBeachBanner.png";
-import {
-  GlobeHemisphereWest,
-  Users,
-  Storefront,
-  Carrot,
-  Grains,
-  Orange,
-  Egg,
-  Bread,
-  Cheese,
-  CoffeeBean,
-  Hamburger,
-} from "@phosphor-icons/react";
+import { GlobeHemisphereWest, Users, Storefront } from "@phosphor-icons/react";
 
 function App() {
   return (
@@ -23,6 +11,11 @@ function App() {
         <div className="w-1/2 flex justify-end gap-8 text-2xl">
           <Link to="/">Home</Link>
           <Link to="/FindFood">Find Food</Link>
+
+          <Link to="/SignIn">Sign In</Link>
+          <Link to="/RestaurantForm">Restaurant Form</Link>
+          <Link to="/ShipmentOrders" >Shipment</Link>
+          <Link to="/Test">Test</Link>
         </div>
       </nav> */}
 
