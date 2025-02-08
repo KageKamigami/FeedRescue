@@ -18,25 +18,38 @@ function App() {
   return (
     <>
       {/*NAVBAR*/}
-      <nav className="flex justify-center p-8 bg-blue-400 text-white">
-        <div className="text-2xl">Food Rescue</div>
+      {/* <nav className="flex justify-center p-4 bg-blue-400 text-white">
+        <div className="text-2xl hover:bg-black hover:text-white h-full w-full text-center transition duration-200">Food Rescue</div>
         <div className="w-1/2 flex justify-end gap-8 text-2xl">
           <Link to="/">Home</Link>
           <Link to="/FindFood">Find Food</Link>
-          <Link to="/SignIn">Sign In</Link>
         </div>
+      </nav> */}
+
+      <nav className="flex justify-evenly bg-white h-20 w-full fixed top-0 shadow-lg border-none">
+        <div className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Food Rescue</div> 
+        <Link to="/" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Home</Link>
+        <Link to="/FindFood" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Find Food</Link>
+        <Link to="/SignIn" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Sign In</Link>
       </nav>
 
       {/*NEW BANNER*/}
-      <div className="flex h-140 items-start justify-center flex-col w-3/5 ml-52 pb-28">
-        <h1 className="text-8xl font-bold pb-8">
-          A marketplace for surplus produce and leftovers.
+      <div className="flex h-150 pt-20 items-start justify-start flex-col w-4/6 ml-20 ">
+        
+        <h1 className="text-8xl text-left font-bold pt-10 pb-10">
+          FeedRescue 
+          
         </h1>
-        <h2 className="text-2xl font-light w-4/6 pl-4">
-          We connect people to local shops perfectly good leftover produce at
-          discounted prices for pickup or delivery
+
+        <h1 className="text-8xl font-bold pt-3 pb-10">
+          A marketplace for surplus produce and leftovers
+        </h1>
+        <h2 className="text-2xl font-light w-5/6 pl-4">
+        Every day food waste fills landfills harming the planet. FeedRescue redirects produce scraps to local farmers, cutting waste, supporting small businesses and fueling sustainable food systems. Join us!
         </h2>
       </div>
+
+
 
       {/*HOW IT WORKS*/}
       <div className="relative h-[450px]">
@@ -50,7 +63,7 @@ function App() {
           <div className="flex justify-center gap-16">
             <h2 className="mt-2 w-1/4 flex justify-center flex-col items-center">
               <Storefront size={200} color="#ffffff" />
-              Shops list their perfectly good leftover produce
+              Find the perfect Charity for you
             </h2>
             <h2 className="mt-2 w-1/4 flex justify-center flex-col items-center">
               <Users size={200} color="#ffffff" />
@@ -66,35 +79,54 @@ function App() {
 
       {/******************************************************************************************************************************/}
 
+      {/* OUR MISSION */}
+      <div className="flex h-120 items-center justify-center flex-col w-full ">
+        <h1 className="text-8xl font-bold pt-10 pb-10">
+          Our Mission.
+        </h1>
+        <h2 className="text-2xl font-light w-5/6 pl-4">
+        Every day, our households and businesses contribute to carbon emissions through food waste—perfectly good scraps like lettuce, tomatoes, cucumbers, and carrots end up in landfills, adding to environmental harm. But what if we could turn that waste into a solution?
+        At FeedRescue, we connect local restaurants, grocery stores, and households with nearby farmers in need. Instead of tossing produce scraps, we redirect them to support livestock, reduce waste, and strengthen local food systems. By joining FeedRescue, you’re not just cutting down on waste—you’re fueling sustainable farming, helping small businesses thrive, and promoting a healthier, more responsible food cycle.
+        s transform waste into opportunity. Join FeedRescue today and be part of the change!
+        </h2>
+      </div>
+
+      {/******************************************************************************************************************************/}
+
       {/*JOIN THE PARTY INFO*/}
       <div className="flex flex-col items-center m-10 w-full">
         <div className="w-3/5">
-          <h1 className="text-left font-black text-blue-400 text-6xl pb-5">
+          <h1 className="text-8xl font-bold pt-10 pb-10">
             Join the party
           </h1>
           <h2 className="text-lg">
             Let us know how you want to use the platform and we'll get you set
             up
           </h2>
-          <div className="flex items-center justify-center gap-60">
-            <div className="w-2/5 flex flex-col items-center justify-center">
+          <div className="flex items-center justify-center gap-30 w-full">
+            
+            <div className="w-full h-100 flex flex-col items-center justify-start pt-10 p-2 rounded-lg border-red-500 bg-[#e3f2fd]">
               <h1 className="text-5xl font-black pb-4">Become a partner</h1>
               <h2 className="text-2xl text-center pb-2">
                 Salvage revenue, reach new customers, and reduce food waste.
               </h2>
-              <Link className="text-2xl text-blue-400 underline" to="/SignIn">
-                Sign up your shop
-              </Link>
+              {/* <Link className="text-2xl text-blue-400 underline" to="/SignIn">
+                Become a Participating Shop
+              </Link> */}
+              <button className="text-2xl w-100 h-15 bg-blue-500 text-white py-2 mt-4 rounded-lg hover:bg-blue-600 transform hover:scale-105 transition duration-200">
+                Become a Participating Shop
+              </button>
             </div>
-            <div className="w-2/5 flex flex-col items-center justify-center">
+            
+            <div className="w-full h-100 flex flex-col items-center justify-start pt-10 p-2 rounded-lg border-red-500 bg-[#e3f2fd]">
               <h1 className="text-5xl font-black pb-4">Get the app</h1>
               <h2 className="text-2xl text-center pb-2">
                 Browse quality local produce at 50% OFF or more. Start saving
                 today.
               </h2>
-              <Link className="text-2xl text-blue-400 underline" to="/SignIn">
+              <button className="text-2xl w-100 h-15 bg-blue-500 text-white py-2 mt-4 rounded-lg hover:bg-blue-600 transform hover:scale-105 transition duration-200">
                 Download the app
-              </Link>
+              </button>
             </div>
           </div>
         </div>
@@ -102,5 +134,7 @@ function App() {
     </>
   );
 }
+
+
 
 export default App;
