@@ -1,7 +1,8 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom"; // Import Link
+import { useLocation } from "react-router-dom";
 import HomePageBanner from "./assets/FoodBeachBanner.png";
 import { GlobeHemisphereWest, Users, Storefront } from "@phosphor-icons/react";
-import React from "react";
+import React, { useState } from "react"; // Import useState
 
 function App() {
   const query = new URLSearchParams(useLocation().search);
@@ -10,7 +11,7 @@ function App() {
   return (
     <>
       {/* NAVBAR */}
-      <nav className="flex justify-evenly bg-white h-20 w-full fixed top-0 shadow-lg border-none">
+      <nav className="flex justify-evenly bg-white h-20 w-full top-0 shadow-lg border-none">
         <div className="flex items-center justify-center h-full w-full text-2xl text-center transition duration-0">
           Food Rescue
         </div>
@@ -25,6 +26,12 @@ function App() {
           className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
         >
           Find Food
+        </Link>
+        <Link
+          to={`/RestaurantForm?email=${encodeURIComponent(email || "")}`} // Pass email to RestaurantForm
+          className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
+        >
+          Restaurant Form
         </Link>
         {email ? (
           <Link
@@ -41,12 +48,6 @@ function App() {
             Sign In
           </Link>
         )}
-        <Link
-          to={`/RestaurantForm?email=${encodeURIComponent(email || "")}`} // Pass email to RestaurantForm
-          className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
-        >
-          Restaurant Form
-        </Link>
       </nav>
 
       {/* Rest of the component remains unchanged */}

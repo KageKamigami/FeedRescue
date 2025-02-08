@@ -84,12 +84,10 @@ function FindFood() {
               <Link to="/SignIn" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">
               Sign In
               </Link>
-                  
-                
-            </nav>
+      </nav>
       <img className="h-100 w-full max-w-full" src={CowBanner}></img>
-      <div className="gap-12 flex flex-row justify-evenly items-center bg-[#DDC9B2] p-4"></div>
-      <div className="bg-[#E8DDD0]">
+      <div className="gap-12 flex flex-row justify-evenly items-center bg-[#F2F2F2] p-4"></div>
+      <div className="bg-[#FFFFFF]">
         <div className="flex justify-center items-center gap-12 p-8">
           {animals.map((animal) => (
             <div
@@ -99,7 +97,7 @@ function FindFood() {
             >
               <img
                 src={animal.image}
-                className={`w-24 h-24 bg-[#DDC9B2] rounded-lg ${
+                className={`w-24 h-24 bg-[#F2F2F2] rounded-lg ${
                   selectedAnimal === animal.name
                     ? "border-4 border-yellow-500 scale-110"
                     : ""
