@@ -1,18 +1,6 @@
 import { Link } from "react-router-dom"; // Import Link
 import HomePageBanner from "./assets/FoodBeachBanner.png";
-import {
-  GlobeHemisphereWest,
-  Users,
-  Storefront,
-  Carrot,
-  Grains,
-  Orange,
-  Egg,
-  Bread,
-  Cheese,
-  CoffeeBean,
-  Hamburger,
-} from "@phosphor-icons/react";
+import { GlobeHemisphereWest, Users, Storefront } from "@phosphor-icons/react";
 
 function App() {
   return (
