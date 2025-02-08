@@ -5,6 +5,8 @@ import "../index.css"; // Ensure Tailwind is included
 import BeachSignIn from "../assets/BeachSignIn.png"; // Correct import path
 
 function ShipmentOrders() {
+  const query = new URLSearchParams(useLocation().search);
+  const email = query.get("email");
   const [orders, setOrders] = useState([]);
 
   // Simulate fetching orders from an external source
@@ -22,7 +24,7 @@ function ShipmentOrders() {
     fetchOrders();
   }, []);
 
-  return (
+  return ( 
     <div
       className="h-screen flex flex-col bg-cover bg-center"
       style={{ backgroundImage: `url(${BeachSignIn})` }} // Use imported image
@@ -59,6 +61,9 @@ function ShipmentOrders() {
 
         {/* Shipment Orders List */}
         <div className="relative bg-gray-850 bg-opacity-50 backdrop-blur-md p-6 shadow-lg w-96 rounded-xl">
+        <div className="w-full border border-gray-300 p-2 mt-2 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none text-white placeholder-white">
+            Your email: <strong>{email}</strong>
+        </div>
           <h2 className="text-2xl font-semibold text-center text-white mb-4">
             Shipment Orders
           </h2>
