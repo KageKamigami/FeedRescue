@@ -77,6 +77,7 @@ function EmailConfirm() {
             Sign In
           </button>
         </div>
+
       </div>
     </div>
   );
