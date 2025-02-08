@@ -7,7 +7,7 @@ function App() {
       {/*NAVBAR*/}
       <nav className="flex justify-evenly m-5">
         <div>Food Rescue</div> <Link to="/">Home</Link>
-        <Link to="/about">About</Link> Sign In
+        <Link to="/FindFood">Find Food</Link> Sign In
       </nav>
 
       {/*BANNER*/}
@@ -42,7 +42,7 @@ function App() {
             <h1 className="text-5xl font-bold pr-4">1</h1>
             <section>
               <p className="font-bold text-2xl pb-4">
-                FIRST – SEE IF DONATESTUFF PICKS UP IN YOUR AREA BY ENTERING
+                FIRST - SEE IF DONATESTUFF PICKS UP IN YOUR AREA BY ENTERING
                 YOUR ZIP CODE.
               </p>
               <p className="font-semibold text-lg">
@@ -57,11 +57,11 @@ function App() {
             <h1 className="text-5xl font-bold pr-4">2</h1>
             <section>
               <p className="font-bold text-2xl pb-4">
-                GREAT NEWS – YOU ARE DIRECTLY ON OUR ROUTE!
+                GREAT NEWS - YOU ARE DIRECTLY ON OUR ROUTE!
               </p>
               <p className="font-semibold text-lg">
                 Get ready for convenience when we pick up your donations for a
-                great cause – but first…
+                great cause - but first…
               </p>
             </section>
           </div>
@@ -75,7 +75,7 @@ function App() {
               </p>
               <p className="font-semibold text-lg">
                 We partner with local charities that are doing good in your
-                area.
+                area. Pick the one you'd like to benefit from your generosity!
               </p>
             </section>
           </div>
@@ -88,7 +88,8 @@ function App() {
                 WHEN DO YOU WANT DONATESTUFF TO PICK UP YOUR DONATION?
               </p>
               <p className="font-semibold text-lg">
-                View calendar to determine the best pickup day for you.
+                Your location is on one of our weekly routes. View calendar to
+                determine best pickup day for you.
               </p>
             </section>
           </div>
@@ -102,7 +103,9 @@ function App() {
               </p>
               <p className="font-semibold text-lg">
                 Leave your used goods and clothes for charity at your front
-                door.
+                door. To ensure that we know what to take away, mark what you
+                are donating. Write DONATESTUFF on the bags/boxes/containers or
+                on paper and attach to them all.
               </p>
             </section>
           </div>
@@ -115,11 +118,14 @@ function App() {
                 WE COME TO YOU AND PICK UP YOUR DONATION
               </p>
               <p className="font-semibold text-lg">
-                On the scheduled date, we will gratefully pick up your donation.
+                On the scheduled date, we will gratefully pick up your donation
+                and leave information on how to get a receipt that includes a
+                tax deduction form for you to process when you complete taxes.
+                You will have a cleaner home and the deep satisfaction of
+                knowing that you helped a great cause!
               </p>
             </section>
           </div>
-
         </div>
       </div>
     </>
