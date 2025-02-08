@@ -13,7 +13,7 @@ function EmailConfirm() {
     const navigate = useNavigate();
 
     const handleSignIn = () => {
-        // Ensure the email is not empty before navigating
+        // Ensure the password is not empty before navigating
         if (password.trim() === "") {
         console.log(password);
         alert("Please enter your password before proceeding.");
@@ -21,7 +21,7 @@ function EmailConfirm() {
         }
     
         // Navigate to the Email page with the email as a query parameter
-        //navigate(`/Email?email=${encodeURIComponent(email)}`);
+        navigate(`/?email=${encodeURIComponent(email)}`);
     };
 
   return (
