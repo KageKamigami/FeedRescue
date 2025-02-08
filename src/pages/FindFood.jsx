@@ -9,6 +9,7 @@ import GrainPhoto from "../assets/v2_73.png";
 import RestaurantPhoto from "../assets/v2_27.png";
 import CowBanner from "../assets/cow.png";
 
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { db } from "../services/firebase"; // Firestore instance
 import { collection, getDocs } from "firebase/firestore";
@@ -16,6 +17,7 @@ import RestaurantProduce from "./RestaurantProduce"; // Import RestaurantProduce
 
 function FindFood() {
   const [restaurants, setRestaurants] = useState([]);
+  const navigate = useNavigate();
   const [selectedAnimal, setSelectedAnimal] = useState(null); // Track selected animal
   const [selectedRestaurant, setSelectedRestaurant] = useState(null); // Track selected restaurant
 
@@ -57,6 +59,13 @@ function FindFood() {
 
   return (
     <>
+    <nav className="flex justify-evenly bg-white h-20 w-full fixed top-0 shadow-lg border-none">
+            <div className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Food Rescue</div> 
+            <Link to="/" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Home</Link>
+            <Link to="/FindFood" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Find Food</Link>
+            <Link to="/SignIn" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Sign In</Link>
+    
+          </nav>
       <div className="fixed rounded bg-[#DDC9B2] p-4 text-xl text-white w-full"></div>
       <img className="h-100 w-full max-w-full" src={CowBanner}></img>
       <div className="gap-12 flex flex-row justify-evenly items-center bg-[#DDC9B2] p-4"></div>
