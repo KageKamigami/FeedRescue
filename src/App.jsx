@@ -1,130 +1,101 @@
 import { Link } from "react-router-dom"; // Import Link
 import HomePageBanner from "./assets/FoodBeachBanner.png";
+import {
+  GlobeHemisphereWest,
+  Users,
+  Storefront,
+  Carrot,
+  Grains,
+  Orange,
+  Egg,
+  Bread,
+  Cheese,
+  CoffeeBean,
+  Hamburger,
+} from "@phosphor-icons/react";
 
 function App() {
   return (
     <>
       {/*NAVBAR*/}
-      <nav className="flex justify-evenly m-5">
-        <div>Food Rescue</div> <Link to="/">Home</Link>
-        <Link to="/FindFood">Find Food</Link> Sign In
+      <nav className="flex justify-center p-8 bg-blue-400 text-white">
+        <div className="text-2xl">Food Rescue</div>
+        <div className="w-1/2 flex justify-end gap-8 text-2xl">
+          <Link to="/">Home</Link>
+          <Link to="/FindFood">Find Food</Link>
+          <Link to="/SignIn">Sign In</Link>
+        </div>
       </nav>
 
-      {/*BANNER*/}
-      <div className="relative w-screen h-[400px]">
+      {/*NEW BANNER*/}
+      <div className="flex h-140 items-start justify-center flex-col w-3/5 ml-52 pb-28">
+        <h1 className="text-8xl font-bold pb-8">
+          A marketplace for surplus produce.
+        </h1>
+        <h2 className="text-2xl font-light w-4/6 pl-4">
+          We connect people to local shops perfectly good leftover produce at
+          discounted prices for pickup or delivery
+        </h2>
+      </div>
+
+      {/*HOW IT WORKS*/}
+      <div className="relative h-[450px]">
         <img
           src={HomePageBanner}
           className="w-screen h-full object-cover"
           alt="Food Rescue Banner"
         />
         <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center text-white text-center bg-black/50 p-4">
-          <h1 className="text-2xl md:text-4xl font-bold">
-            SCHEDULING LEFTOVER FOODS & FOOD DONATION PICKUP IS EASIER THAN EVER
-          </h1>
-          <h2 className="text-lg md:text-2xl font-bold mt-2">
-            Donate your foods today!
-          </h2>
-          <button className="mt-4 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition">
-            SCHEDULE A PICKUP TODAY
-          </button>
+          <h1 className="text-5xl font-bold w-3/5">How it works</h1>
+          <div className="flex justify-center gap-16">
+            <h2 className="mt-2 w-1/4 flex justify-center flex-col items-center">
+              <Storefront size={200} color="#ffffff" />
+              Shops list their perfectly good leftover produce
+            </h2>
+            <h2 className="mt-2 w-1/4 flex justify-center flex-col items-center">
+              <Users size={200} color="#ffffff" />
+              Purchase it on our platform at 50% cheaper for pickup
+            </h2>
+            <h2 className="mt-2 w-1/4 flex justify-center flex-col items-center">
+              <GlobeHemisphereWest size={200} color="#ffffff" />
+              We all reduce food waste and contribute to a greener planet
+            </h2>
+          </div>
         </div>
       </div>
 
-      {/*HOW DOES IT WORK? INFO*/}
-      <div className="flex flex-col items-center m-10">
-        <h1 className="text-center font-black text-blue-400 text-4xl pb-10">
-          HOW DOES THIS PROCESS WORK?
-        </h1>
+      {/******************************************************************************************************************************/}
 
-        <div className="grid grid-cols-2 gap-8 w-1/2">
-          {/* PROCESS 1 */}
-          <div className="flex">
-            <h1 className="text-5xl font-bold pr-4">1</h1>
-            <section>
-              <p className="font-bold text-2xl pb-4">
-                FIRST - SEE IF DONATESTUFF PICKS UP IN YOUR AREA BY ENTERING
-                YOUR ZIP CODE.
-              </p>
-              <p className="font-semibold text-lg">
-                We are always looking for new regions to serve, so if you do not
-                see your code listed today, try back soon.
-              </p>
-            </section>
-          </div>
-
-          {/* PROCESS 2 */}
-          <div className="flex">
-            <h1 className="text-5xl font-bold pr-4">2</h1>
-            <section>
-              <p className="font-bold text-2xl pb-4">
-                GREAT NEWS - YOU ARE DIRECTLY ON OUR ROUTE!
-              </p>
-              <p className="font-semibold text-lg">
-                Get ready for convenience when we pick up your donations for a
-                great cause - but first…
-              </p>
-            </section>
-          </div>
-
-          {/* PROCESS 3 */}
-          <div className="flex">
-            <h1 className="text-5xl font-bold pr-4">3</h1>
-            <section>
-              <p className="font-bold text-2xl pb-4">
-                SEE WHICH NONPROFIT ORGANIZATION WILL BENEFIT!
-              </p>
-              <p className="font-semibold text-lg">
-                We partner with local charities that are doing good in your
-                area. Pick the one you'd like to benefit from your generosity!
-              </p>
-            </section>
-          </div>
-
-          {/* PROCESS 4 */}
-          <div className="flex">
-            <h1 className="text-5xl font-bold pr-4">4</h1>
-            <section>
-              <p className="font-bold text-2xl pb-4">
-                WHEN DO YOU WANT DONATESTUFF TO PICK UP YOUR DONATION?
-              </p>
-              <p className="font-semibold text-lg">
-                Your location is on one of our weekly routes. View calendar to
-                determine best pickup day for you.
-              </p>
-            </section>
-          </div>
-
-          {/* PROCESS 5 */}
-          <div className="flex">
-            <h1 className="text-5xl font-bold pr-4">5</h1>
-            <section>
-              <p className="font-bold text-2xl pb-4">
-                SECURE YOUR DONATIONS IN BAGS OR BOXES.
-              </p>
-              <p className="font-semibold text-lg">
-                Leave your used goods and clothes for charity at your front
-                door. To ensure that we know what to take away, mark what you
-                are donating. Write DONATESTUFF on the bags/boxes/containers or
-                on paper and attach to them all.
-              </p>
-            </section>
-          </div>
-
-          {/* PROCESS 6 */}
-          <div className="flex">
-            <h1 className="text-5xl font-bold pr-4">6</h1>
-            <section>
-              <p className="font-bold text-2xl pb-4">
-                WE COME TO YOU AND PICK UP YOUR DONATION
-              </p>
-              <p className="font-semibold text-lg">
-                On the scheduled date, we will gratefully pick up your donation
-                and leave information on how to get a receipt that includes a
-                tax deduction form for you to process when you complete taxes.
-                You will have a cleaner home and the deep satisfaction of
-                knowing that you helped a great cause!
-              </p>
-            </section>
+      {/*JOIN THE PARTY INFO*/}
+      <div className="flex flex-col items-center m-10 w-full">
+        <div className="w-3/5">
+          <h1 className="text-left font-black text-blue-400 text-6xl pb-5">
+            Join the party
+          </h1>
+          <h2 className="text-lg">
+            Let us know how you want to use the platform and we'll get you set
+            up
+          </h2>
+          <div className="flex items-center justify-center gap-60">
+            <div className="w-2/5 flex flex-col items-center justify-center">
+              <h1 className="text-5xl font-black pb-4">Become a partner</h1>
+              <h2 className="text-2xl text-center pb-2">
+                Salvage revenue, reach new customers, and reduce food waste.
+              </h2>
+              <Link className="text-2xl text-blue-400 underline" to="/SignIn">
+                Sign up your shop
+              </Link>
+            </div>
+            <div className="w-2/5 flex flex-col items-center justify-center">
+              <h1 className="text-5xl font-black pb-4">Get the app</h1>
+              <h2 className="text-2xl text-center pb-2">
+                Browse quality local produce at 50% OFF or more. Start saving
+                today.
+              </h2>
+              <Link className="text-2xl text-blue-400 underline" to="/SignIn">
+                Download the app
+              </Link>
+            </div>
           </div>
         </div>
       </div>
