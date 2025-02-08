@@ -11,14 +11,14 @@ function App() {
       </nav>
 
       {/*BANNER*/}
-      <div className="relative w-screen h-[400px]">
+      <div className="relative h-[400px]">
         <img
           src={HomePageBanner}
           className="w-screen h-full object-cover"
           alt="Food Rescue Banner"
         />
         <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center text-white text-center bg-black/50 p-4">
-          <h1 className="text-2xl md:text-4xl font-bold">
+          <h1 className="text-5xl font-bold w-3/5">
             SCHEDULING LEFTOVER FOODS & FOOD DONATION PICKUP IS EASIER THAN EVER
           </h1>
           <h2 className="text-lg md:text-2xl font-bold mt-2">
@@ -37,94 +37,213 @@ function App() {
         </h1>
 
         <div className="grid grid-cols-2 gap-8 w-1/2">
-          {/* PROCESS 1 */}
+          {/* STEP 1 */}
           <div className="flex">
             <h1 className="text-5xl font-bold pr-4">1</h1>
             <section>
               <p className="font-bold text-2xl pb-4">
-                FIRST - SEE IF DONATESTUFF PICKS UP IN YOUR AREA BY ENTERING
-                YOUR ZIP CODE.
+                CHECK IF LIVESTOCK OWNERS ARE LOOKING FOR PRODUCE NEAR YOU.
               </p>
               <p className="font-semibold text-lg">
-                We are always looking for new regions to serve, so if you do not
-                see your code listed today, try back soon.
+                Enter your location to see nearby farmers and livestock owners
+                looking to buy excess produce and food waste.
               </p>
             </section>
           </div>
 
-          {/* PROCESS 2 */}
+          {/* STEP 2 */}
           <div className="flex">
             <h1 className="text-5xl font-bold pr-4">2</h1>
             <section>
               <p className="font-bold text-2xl pb-4">
-                GREAT NEWS - YOU ARE DIRECTLY ON OUR ROUTE!
+                GREAT NEWS - YOUR PRODUCE CAN BE REPURPOSED!
               </p>
               <p className="font-semibold text-lg">
-                Get ready for convenience when we pick up your donations for a
-                great cause - but first…
+                Instead of throwing away leftovers, you can sell them directly
+                to farmers who will use them to feed their livestock.
               </p>
             </section>
           </div>
 
-          {/* PROCESS 3 */}
+          {/* STEP 3 */}
           <div className="flex">
             <h1 className="text-5xl font-bold pr-4">3</h1>
             <section>
               <p className="font-bold text-2xl pb-4">
-                SEE WHICH NONPROFIT ORGANIZATION WILL BENEFIT!
+                SEE WHICH LIVESTOCK OWNERS NEED YOUR EXCESS PRODUCE.
               </p>
               <p className="font-semibold text-lg">
-                We partner with local charities that are doing good in your
-                area. Pick the one you'd like to benefit from your generosity!
+                We connect you with farmers in need of food scraps, ensuring
+                your waste gets repurposed efficiently.
               </p>
             </section>
           </div>
 
-          {/* PROCESS 4 */}
+          {/* STEP 4 */}
           <div className="flex">
             <h1 className="text-5xl font-bold pr-4">4</h1>
             <section>
               <p className="font-bold text-2xl pb-4">
-                WHEN DO YOU WANT DONATESTUFF TO PICK UP YOUR DONATION?
+                SCHEDULE A PICKUP OR DROP-OFF FOR YOUR LEFTOVER PRODUCE.
               </p>
               <p className="font-semibold text-lg">
-                Your location is on one of our weekly routes. View calendar to
-                determine best pickup day for you.
+                Choose a convenient time for pickup or arrange a drop-off at a
+                nearby farm. Flexible scheduling makes the process easy.
               </p>
             </section>
           </div>
 
-          {/* PROCESS 5 */}
+          {/* STEP 5 */}
           <div className="flex">
             <h1 className="text-5xl font-bold pr-4">5</h1>
             <section>
               <p className="font-bold text-2xl pb-4">
-                SECURE YOUR DONATIONS IN BAGS OR BOXES.
+                PACKAGE YOUR LEFTOVER PRODUCE FOR COLLECTION.
               </p>
               <p className="font-semibold text-lg">
-                Leave your used goods and clothes for charity at your front
-                door. To ensure that we know what to take away, mark what you
-                are donating. Write DONATESTUFF on the bags/boxes/containers or
-                on paper and attach to them all.
+                Secure your excess produce in bins or containers. Label them
+                clearly so farmers know what they're picking up.
               </p>
             </section>
           </div>
 
-          {/* PROCESS 6 */}
+          {/* STEP 6 */}
           <div className="flex">
             <h1 className="text-5xl font-bold pr-4">6</h1>
             <section>
               <p className="font-bold text-2xl pb-4">
-                WE COME TO YOU AND PICK UP YOUR DONATION
+                CONNECT, SELL, AND SUPPORT SUSTAINABILITY.
               </p>
               <p className="font-semibold text-lg">
-                On the scheduled date, we will gratefully pick up your donation
-                and leave information on how to get a receipt that includes a
-                tax deduction form for you to process when you complete taxes.
-                You will have a cleaner home and the deep satisfaction of
-                knowing that you helped a great cause!
+                Farmers collect your leftover produce, reducing waste and
+                supporting sustainable livestock feeding. You earn extra revenue
+                while making an impact!
               </p>
             </section>
+          </div>
+        </div>
+
+        {/*WHAT CAN I DONATE? INFO*/}
+        <div className="flex flex-col gap-1 mt-6 w-3/6">
+          <h1 className="text-center font-black text-blue-400 text-4xl pb-5">
+            WHAT CAN I DONATE?
+          </h1>
+          <div>
+            <p className="text-xl font-semibold text-center">
+              Feed Rescue accepts these items:
+            </p>
+
+            {/* ACCEPTED 1 */}
+            <p className="font-bold text-3xl text-blue-400 py-4">
+              Fruits & Vegetables
+            </p>
+            <div className="flex flex-col items-start">
+              <ul className="grid grid-cols-2 list-disc list-inside text-lg font-semibold w-3/4 text-left">
+                <li>Apples (without seeds)</li>
+                <li>Carrots</li>
+                <li>Squash & Pumpkins</li>
+                <li>Leafy greens (lettuce, kale, spinach)</li>
+                <li>Cucumbers</li>
+                <li>Watermelon</li>
+                <li>Bananas (including peels)</li>
+                <li>Berries</li>
+              </ul>
+            </div>
+
+            {/* ACCEPTED 2 */}
+            <p className="font-bold text-3xl text-blue-400 py-4">
+              Grains & Bread
+            </p>
+            <div className="flex flex-col items-start">
+              <ul className="grid grid-cols-2 list-disc list-inside text-lg font-semibold w-3/4 text-left">
+                <li>Oats</li>
+                <li>Barley</li>
+                <li>Corn</li>
+                <li>Rice</li>
+              </ul>
+            </div>
+
+            {/* ACCEPTED 3 */}
+            <p className="font-bold text-3xl text-blue-400 py-4">
+              Protein Sources
+            </p>
+            <div className="flex flex-col items-start">
+              <ul className="grid grid-cols-2 list-disc list-inside text-lg font-semibold w-3/4 text-left">
+                <li>Cooked eggs</li>
+                <li>Legumes (peas, lentils)</li>
+                <li>Mealworms & insects (for chickens)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/******************************************************************************************************************************/}
+
+        {/*WHAT CAN'T I DONATE? INFO*/}
+        <div className="flex flex-col gap-1 mt-6 w-3/6">
+          <h1 className="text-center font-black text-red-400 text-4xl pb-5">
+            WHAT CAN'T I DONATE?
+          </h1>
+          <div>
+            <p className="text-xl font-semibold text-center">
+              Feed Rescue rejects these items:
+            </p>
+
+            {/*REJECTED 1*/}
+            <div>
+              <section>
+                <p className="font-bold text-2xl text-red-400 py-4 text-left">
+                  Toxic Fruits & Veggies
+                </p>
+                <p className="font-semibold text-lg text-left">
+                  Avocados (toxic to most animals) Onions & Garlic (cause anemia
+                  in many livestock) Potato peels & green potatoes (contain
+                  solanine, toxic to most) Tomato & Pepper leaves (contain
+                  solanine) Rhubarb leaves (contain oxalates, toxic) Cherry,
+                  Peach, & Apricot pits (contain cyanide)
+                </p>
+              </section>
+            </div>
+
+            {/*REJECTED 2*/}
+            <div>
+              <section>
+                <p className="font-bold text-2xl text-red-400 py-4 text-left">
+                  Dangerous Grains & Bread
+                </p>
+                <p className="font-semibold text-lg text-left">
+                  Moldy bread or grains (can cause illness) Uncooked beans
+                  (contain toxins)
+                </p>
+              </section>
+            </div>
+
+            {/*REJECTED 3*/}
+            <div>
+              <section>
+                <p className="font-bold text-2xl text-red-400 py-4 text-left">
+                  Dairy & Meat (for herbivores like cows, goats, and sheep){" "}
+                </p>
+                <p className="font-semibold text-lg text-left">
+                  No large amounts of milk or cheese (can cause digestion
+                  issues) No meat or bones (herbivores cannot digest them)
+                </p>
+              </section>
+            </div>
+
+            {/*REJECTED 4*/}
+            <div>
+              <section>
+                <p className="font-bold text-2xl text-red-400 py-4 text-left">
+                  Other Harmful Foods
+                </p>
+                <p className="font-semibold text-lg text-left">
+                  Chocolate (toxic to most animals) Coffee & Caffeine (dangerous
+                  for all livestock) Processed foods (chips, candy, junk food)
+                  Anything moldy or rotten
+                </p>
+              </section>
+            </div>
           </div>
         </div>
       </div>
