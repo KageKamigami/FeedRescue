@@ -20,9 +20,10 @@ function App() {
       </nav> */}
 
       <nav className="flex justify-evenly bg-white h-20 w-full fixed top-0 shadow-lg border-none">
-        <div className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Food Rescue</div> 
+        <div className="flex items-center justify-center h-full w-full text-2xl text-center transition duration-200">Food Rescue</div> 
         <Link to="/" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Home</Link>
         <Link to="/FindFood" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Find Food</Link>
+        <Link to="/RestaurantForm" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Restaurant Form</Link>
         <Link to="/SignIn" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Sign In</Link>
       </nav>
 
@@ -89,12 +90,11 @@ function App() {
       {/*JOIN THE PARTY INFO*/}
       <div className="flex flex-col items-center m-10 w-full">
         <div className="w-3/5">
-          <h1 className="text-8xl font-bold pt-10 pb-10">
+          <h1 className="text-8xl font-bold text-center pt-10 pb-10">
             Join the party
           </h1>
-          <h2 className="text-lg">
-            Let us know how you want to use the platform and we'll get you set
-            up
+          <h2 className="text-2xl font-light text-center pb-10">
+            Let us know how you want to use the platform and we'll get you set up
           </h2>
           <div className="flex items-center justify-center gap-30 w-full">
             
