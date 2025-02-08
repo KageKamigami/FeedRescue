@@ -4,6 +4,26 @@ import "../index.css"; // Ensure Tailwind is included
 import BeachSignIn from "../assets/BeachSignIn.png"; // Correct import path
 
 function SignIn() {
+  const [email, setEmail] = useState("");
+  const navigate = useNavigate();
+
+  // const handleSignIn = () => {
+  //   console.log(email);
+  //   navigate("/Email");
+  // };
+
+  const handleSignIn = () => {
+    // Ensure the email is not empty before navigating
+    if (email.trim() === "") {
+      alert("Please enter your email before proceeding.");
+      return;
+    }
+  
+    // Navigate to the Email page with the email as a query parameter
+    navigate(`/Email?email=${encodeURIComponent(email)}`);
+  };
+  
+
   return (
     <div 
       className="h-screen flex flex-col bg-cover bg-center" 
@@ -19,8 +39,9 @@ function SignIn() {
       
       <div className="flex-grow flex items-center justify-center mt-16">
         {/* Black Transparent Box for Shadow Effect */}
-        <div className="absolute bg-black opacity-50 w-96 p-6 shadow-lg rounded-xl"></div>
-        
+
+        <div className="absolute bg-black opacity-50 h-90 w-96 p-6 shadow-lg rounded-xl"></div>
+
         <div className="relative bg-gray-850 bg-opacity-50 backdrop-blur-md p-6 shadow-lg w-96 rounded-xl">
           <h2 className="text-2xl font-semibold text-center text-white">Sign In</h2>
           <button className="w-full bg-blue-500 text-white py-2 mt-4 rounded-lg hover:bg-blue-600 transform hover:scale-105 transition duration-200">
