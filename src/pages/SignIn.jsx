@@ -9,7 +9,6 @@ function SignIn() {
   const navigate = useNavigate();
 
   const handleSignIn = () => {
-    console.log("HELLO");
     navigate("/Email");
   };
 
@@ -62,8 +61,10 @@ function SignIn() {
           </button>
           <p className="text-center my-4 text-white">OR</p>
           <input
-            type="email"
-            placeholder="Enter your email"
+            type="email" 
+            placeholder="Enter your email" 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)}
             className="w-full border border-gray-300 p-2 mt-2 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none text-white placeholder-white"
           />
           <button
