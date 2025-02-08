@@ -1,4 +1,4 @@
-function About() {
+function FindFood() {
   return (
     <div>
       <h1>About Page</h1>
@@ -7,4 +7,4 @@ function About() {
   );
 }
 
-export default About;
+export default FindFood;
