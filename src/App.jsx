@@ -1,31 +1,50 @@
-import { useState } from "react";
 import { Link } from "react-router-dom"; // Import Link
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import HomePageBanner from "./assets/HomePageBanner.png";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <nav>
-        <Link to="/">Home</Link> | <Link to="/about">About</Link>
+      {/*NAVBAR*/}
+      <nav className="flex justify-evenly">
+        <div>Food Rescue</div> <Link to="/">Home</Link>
+        <Link to="/about">About</Link> Sign In
       </nav>
 
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      {/*BANNER*/}
+      <div className="relative w-screen h-[300px]">
+        <img
+          src={HomePageBanner}
+          className="w-screen h-full object-cover"
+          alt="Food Rescue Banner"
+        />
+        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center text-white text-center bg-black/50 p-4">
+          <h1 className="text-2xl md:text-4xl font-bold">
+            SCHEDULING LEFTOVER FOODS & FOOD DONATION PICKUP IS EASIER THAN EVER
+          </h1>
+          <h2 className="text-lg md:text-2xl font-bold mt-2">
+            Donate your foods today!
+          </h2>
+          <button className="mt-4 bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition">
+            SCHEDULE A PICKUP TODAY
+          </button>
+        </div>
       </div>
-      <h1 className="font-bold">Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+
+      {/*HOW DOES IT WORK? INFO*/}
+      <div>
+        HOW DOES THIS PROCESS WORK?
+        <section>
+          <h1>1</h1>
+          <p>
+            FIRST – SEE IF DONATESTUFF PICKS UP IN YOUR AREA BY ENTERING YOUR
+            ZIP CODE.
+          </p>
+          <p>
+            We are always looking for new regions to serve, so if you do not see
+            your code listed today, try back soon.
+          </p>
+        </section>
       </div>
     </>
   );
