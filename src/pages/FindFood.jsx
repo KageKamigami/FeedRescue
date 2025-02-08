@@ -9,57 +9,66 @@ import GrainPhoto from "../assets/v2_73.png";
 import RestaurantPhoto from "../assets/v2_27.png";
 import CowBanner from "../assets/cow.png";
 
+import { useState, useEffect } from "react";
+import { db } from "../services/firebase"; // Firestore instance
+import { collection, getDocs } from "firebase/firestore";
+
 function FindFood() {
+  const [restaurants, setRestaurants] = useState([]);
+  const [selectedAnimal, setSelectedAnimal] = useState(null); // Track selected animal
+
+  useEffect(() => {
+    async function fetchRestaurants() {
+      try {
+        const querySnapshot = await getDocs(collection(db, "Restaurants"));
+        const restaurantList = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setRestaurants(restaurantList);
+      } catch (error) {
+        console.error("Error fetching restaurants:", error);
+      }
+    }
+    fetchRestaurants();
+  }, []);
+
+  // Animal Data
+  const animals = [
+    { name: "Chicken", image: Chicken },
+    { name: "Horse", image: Horse },
+    { name: "Pig", image: Pig },
+    { name: "Goat", image: Goat },
+    { name: "Turkey", image: Turkey },
+    { name: "Cow", image: Cow },
+    { name: "Sheep", image: Sheep },
+  ];
+
   return (
     <>
       <div className="fixed rounded bg-[#DDC9B2] p-4 text-xl text-white w-full"></div>
       <img className="h-100 w-full max-w-full" src={CowBanner}></img>
       <div className="gap-12 flex flex-row justify-evenly items-center bg-[#DDC9B2] p-4"></div>
-      <div className="bg-[#E8DDD0] h-[200rem]">
+      <div className="bg-[#E8DDD0]">
         <div className="flex justify-center items-center gap-12 p-8">
-          <div className="text-center font-semibold">
-            <img
-              src={Chicken}
-              className="w-24 h-24 bg-[#DDC9B2] rounded-lg"
-            ></img>
-            Chicken
-          </div>
-          <div className="text-center font-semibold">
-            <img
-              src={Horse}
-              className="w-24 h-24  bg-[#DDC9B2] rounded-lg"
-            ></img>
-            Horse
-          </div>
-          <div className="text-center font-semibold">
-            <img src={Pig} className="w-24 h-24  bg-[#DDC9B2] rounded-lg"></img>
-            Pig
-          </div>
-          <div className="text-center font-semibold">
-            <img
-              src={Goat}
-              className="w-24 h-24  bg-[#DDC9B2] rounded-lg"
-            ></img>
-            Goat
-          </div>
-          <div className="text-center font-semibold">
-            <img
-              src={Turkey}
-              className="w-24 h-24  bg-[#DDC9B2] rounded-lg"
-            ></img>
-            Turkey
-          </div>
-          <div className="text-center font-semibold">
-            <img src={Cow} className="w-24 h-24  bg-[#DDC9B2] rounded-lg"></img>
-            Cow
-          </div>
-          <div className="text-center font-semibold">
-            <img
-              src={Sheep}
-              className="w-24 h-24  bg-[#DDC9B2] rounded-lg"
-            ></img>
-            Sheep
-          </div>
+          {animals.map((animal) => (
+            <div
+              key={animal.name}
+              className="text-center font-semibold cursor-pointer transition-all"
+              onClick={() => setSelectedAnimal(animal.name)}
+            >
+              <img
+                src={animal.image}
+                className={`w-24 h-24 bg-[#DDC9B2] rounded-lg ${
+                  selectedAnimal === animal.name
+                    ? "border-4 border-yellow-500 scale-110"
+                    : ""
+                }`}
+                alt={animal.name}
+              />
+              {animal.name}
+            </div>
+          ))}
         </div>
 
         <div className="flex flex-row justify-center items-center gap-12">
@@ -88,17 +97,18 @@ function FindFood() {
           </div>
         </div>
 
-        <div className="m-4 flex items-center justify-center flex-row gap-8">
-          <div className="rounded-2xl w-1/4">
-            <img src={RestaurantPhoto} className="rounded-2xl"></img>
-          </div>
-
-          <div className="rounded-2xl w-1/4">
-            <img src={RestaurantPhoto} className=" rounded-2xl"></img>
-          </div>
-
-          <div className="rounded-2xl w-1/4">
-            <img src={RestaurantPhoto} className=" rounded-2xl"></img>
+        <div className="flex items-center justify-center mt-20 w-3/4 ml-45 pb-20">
+          <div className="grid grid-cols-3 gap-8 w-full">
+            {restaurants.map((restaurant) => (
+              <div key={restaurant.id} className="rounded-2xl">
+                <img
+                  src={RestaurantPhoto}
+                  className="rounded-2xl w-full"
+                  alt={restaurant.name}
+                />
+                <div className="font-semibold pl-1">{restaurant.name}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
