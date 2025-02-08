@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom"; // Import Link
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import HomePageBanner from "./assets/FoodBeachBanner.png";
 import { GlobeHemisphereWest, Users, Storefront } from "@phosphor-icons/react";
-import React, { useState } from "react"; // Import useState
+import React from "react";
 
 function App() {
   const query = new URLSearchParams(useLocation().search);
@@ -16,32 +15,38 @@ function App() {
           Food Rescue
         </div>
         <Link
-          to="/"
+          to={`/?email=${encodeURIComponent(email || "")}`} // Pass email to Home
           className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
         >
           Home
         </Link>
         <Link
-          to="/FindFood"
+          to={`/FindFood?email=${encodeURIComponent(email || "")}`} // Pass email to FindFood
           className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
         >
           Find Food
         </Link>
+        {email ? (
+          <Link
+            to={`/ShipmentOrders?email=${encodeURIComponent(email)}`} // Pass email to Account
+            className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
+          >
+            Account
+          </Link>
+        ) : (
+          <Link
+            to="/SignIn"
+            className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
+          >
+            Sign In
+          </Link>
+        )}
         <Link
-          to="/RestaurantForm"
+          to={`/RestaurantForm?email=${encodeURIComponent(email || "")}`} // Pass email to RestaurantForm
           className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
         >
           Restaurant Form
         </Link>
-        {/* Conditional Rendering for Sign In / Email */}
-          {email ? (
-            <Link to="/ShipmentOrders" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">
-              Account
-            </Link>
-          ) : (
-            <Link to="/SignIn" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Sign In</Link>
-            
-          )}
       </nav>
 
       {/* Rest of the component remains unchanged */}

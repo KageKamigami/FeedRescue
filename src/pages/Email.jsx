@@ -15,7 +15,6 @@ function EmailConfirm() {
     const handleSignIn = () => {
         // Ensure the password is not empty before navigating
         if (password.trim() === "") {
-        console.log(password);
         alert("Please enter your password before proceeding.");
         return;
         }
