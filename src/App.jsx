@@ -12,7 +12,7 @@ function App() {
     <>
       {/* NAVBAR */}
       <nav className="flex justify-evenly bg-white h-20 w-full fixed top-0 shadow-lg border-none">
-        <div className="flex items-center justify-center h-full w-full text-2xl text-center transition duration-200">
+        <div className="flex items-center justify-center h-full w-full text-2xl text-center transition duration-0">
           Food Rescue
         </div>
         <Link
