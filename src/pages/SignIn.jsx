@@ -8,10 +8,6 @@ function SignIn() {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
-  // const handleSignIn = () => {
-  //   console.log(email);
-  //   navigate("/Email");
-  // };
 
   const handleSignIn = () => {
     // Ensure the email is not empty before navigating
