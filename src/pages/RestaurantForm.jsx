@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"; // Import Link
 import { useState } from "react";
 import { db } from "../services/firebase"; // Import Firestore instance
 import { collection, addDoc } from "firebase/firestore";
@@ -79,11 +80,21 @@ const RestaurantForm = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto p-6 bg-white shadow-md rounded-lg flex flex-col items-center justify-center w-auto h-auto mt-4">
+      <>
+      {/* NAVIGATION BAR */}
+      <nav className="flex justify-evenly bg-white h-20 w-full fixed top-0 shadow-lg border-none">
+        <div className="flex items-center justify-center h-full w-full text-2xl text-center transition duration-200">Food Rescue</div> 
+        <Link to="/" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Home</Link>
+        <Link to="/FindFood" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Find Food</Link>
+        <Link to="/RestaurantForm" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Restaurant Form</Link>
+        <Link to="/SignIn" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Sign In</Link>
+      </nav> 
+
+    <div className="max-w-xl mx-auto p-6 bg-white shadow-md rounded-lg flex flex-col items-center justify-center w-auto h-auto mt-50">
       <h2 className="text-xl font-bold mb-4">Add Restaurant & Produce</h2>
 
       {/* Restaurant Form */}
-      <form onSubmit={handleSubmitRestaurant} className="space-y-4">
+      <form onSubmit={handleSubmitRestaurant} className="space-y-4 ">
         <input
           type="text"
           name="name"
@@ -176,6 +187,7 @@ const RestaurantForm = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
