@@ -32,26 +32,38 @@ function SignIn() {
                 Food Rescue
               </div>
               <Link
-                to="/"
+                to={`/?email=${encodeURIComponent(email || "")}`} // Pass email to Home
                 className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
               >
                 Home
               </Link>
               <Link
-                to="/FindFood"
+                to={`/FindFood?email=${encodeURIComponent(email || "")}`} // Pass email to FindFood
                 className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
               >
                 Find Food
               </Link>
               <Link
-                to="/RestaurantForm"
+                to={`/RestaurantForm?email=${encodeURIComponent(email || "")}`} // Pass email to RestaurantForm
                 className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
               >
                 Restaurant Form
               </Link>
-              <Link to="/SignIn" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">
-              Sign In
-              </Link>
+              {email ? (
+                <Link
+                  to={`/ShipmentOrders?email=${encodeURIComponent(email)}`} // Pass email to Account
+                  className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
+                >
+                  Account
+                </Link>
+              ) : (
+                <Link
+                  to="/SignIn"
+                  className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
+                >
+                  Sign In
+                </Link>
+              )}
             </nav>
 
       <div className="flex-grow flex items-center justify-center mt-16">
