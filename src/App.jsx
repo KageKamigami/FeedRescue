@@ -30,7 +30,7 @@ function App() {
       {/*NEW BANNER*/}
       <div className="flex h-140 items-start justify-center flex-col w-3/5 ml-52 pb-28">
         <h1 className="text-8xl font-bold pb-8">
-          A marketplace for surplus produce.
+          A marketplace for surplus produce and leftovers.
         </h1>
         <h2 className="text-2xl font-light w-4/6 pl-4">
           We connect people to local shops perfectly good leftover produce at
