@@ -31,28 +31,12 @@ function SignIn() {
       style={{ backgroundImage: `url(${BeachSignIn})` }} // Use imported image
     >
       {/* NAVBAR */}
-      <nav className="flex justify-evenly bg-white h-12 w-full fixed top-0 shadow-lg border-none">
-        <div className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-center transition duration-200">
-          Food Rescue
-        </div>
-        <Link
-          to="/"
-          className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-center transition duration-200"
-        >
-          Home
-        </Link>
-        <Link
-          to="/FindFood"
-          className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-center transition duration-200"
-        >
-          Find Food
-        </Link>
-        <Link
-          to="/SignIn"
-          className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-center transition duration-200"
-        >
-          Sign In
-        </Link>
+      <nav className="flex justify-evenly bg-white h-20 w-full fixed top-0 shadow-lg border-none">
+        <div className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Food Rescue</div> 
+        <Link to="/" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Home</Link>
+        <Link to="/FindFood" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Find Food</Link>
+        <Link to="/SignIn" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Sign In</Link>
+
       </nav>
 
       <div className="flex-grow flex items-center justify-center mt-16">
