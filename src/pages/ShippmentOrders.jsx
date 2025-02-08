@@ -1,31 +1,61 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { db } from "../services/firebase"; // Firebase import
+import { collection, getDocs } from "firebase/firestore"; // Firestore methods
 
 import "../index.css"; // Ensure Tailwind is included
 import BeachSignIn from "../assets/BeachSignIn.png"; // Correct import path
 
 function ShipmentOrders() {
   const [orders, setOrders] = useState([]);
+  const [produceList, setProduceList] = useState([]);
+  const { selectedProduce, restaurantId } = useLocation().state || {}; // Use location to access passed state
 
-  // Simulate fetching orders from an external source
+  // Fetch produce list from Firebase
   useEffect(() => {
-    const fetchOrders = () => {
-      // This would typically be replaced with an API call or file read
-      const orders = [
-        { product: "Organic Chicken Feed", quantity: 2, status: "processing" },
-        { product: "Premium Horse Feed", quantity: 1, status: "shipped" },
-        { product: "Natural Cow Feed", quantity: 3, status: "delivered" }
-      ];
-      setOrders(orders);
+    const fetchProduce = async () => {
+      try {
+        const produceCollectionRef = collection(
+          db,
+          "Restaurants",
+          restaurantId,
+          "produce"
+        ); // Correct subcollection path
+        const querySnapshot = await getDocs(produceCollectionRef);
+        const produceData = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setProduceList(produceData);
+      } catch (error) {
+        console.error("Error fetching produce data from Firestore: ", error);
+      }
     };
 
-    fetchOrders();
-  }, []);
+    if (restaurantId) {
+      fetchProduce();
+    }
+  }, [restaurantId]);
+
+  useEffect(() => {
+    if (selectedProduce && produceList.length > 0) {
+      const newOrders = selectedProduce.map((produceId) => {
+        const product = produceList.find((item) => item.id === produceId); // Find the product by ID
+        return {
+          name: product ? product.name : "Unknown Product", // Use product name
+          quantity: product ? product.quantity : 1, // Use product quantity
+          status: "processing", // Set default status to 'processing'
+        };
+      });
+
+      setOrders(newOrders); // Update the orders state with selected produce
+    }
+  }, [selectedProduce, produceList]); // Re-run effect when selectedProduce or produceList changes
 
   return (
     <div
       className="h-screen flex flex-col bg-cover bg-center"
-      style={{ backgroundImage: `url(${BeachSignIn})` }} // Use imported image
+      style={{ backgroundImage: `url(${BeachSignIn})` }}
     >
       {/* NAVBAR */}
       <nav className="flex justify-evenly bg-white h-12 w-full fixed top-0 shadow-lg border-none">
@@ -61,18 +91,30 @@ function ShipmentOrders() {
             Shipment Orders
           </h2>
           <ul className="mt-4">
-            {orders.map((order, index) => (
-              <li key={index} className="mb-4 p-4 bg-gray-800 bg-opacity-40 rounded-lg">
-                <div className="text-white">
-                  <strong>Product:</strong> {order.product}<br />
-                  <strong>Quantity:</strong> {order.quantity}<br />
-                  <strong>Status:</strong>{" "}
-                  <span className={`status ${order.status} px-2 py-1 rounded-lg`}>
-                    {order.status.charAt(0).toUpperCase() + order.status.slice(1)}
-                  </span>
-                </div>
-              </li>
-            ))}
+            {orders.length > 0 ? (
+              orders.map((order, index) => (
+                <li
+                  key={index}
+                  className="mb-4 p-4 bg-gray-800 bg-opacity-40 rounded-lg"
+                >
+                  <div className="text-white">
+                    <strong>Product:</strong> {order.name}
+                    <br />
+                    <strong>Quantity:</strong> {order.quantity}
+                    <br />
+                    <strong>Status:</strong>{" "}
+                    <span
+                      className={`status ${order.status} px-2 py-1 rounded-lg`}
+                    >
+                      {order.status.charAt(0).toUpperCase() +
+                        order.status.slice(1)}
+                    </span>
+                  </div>
+                </li>
+              ))
+            ) : (
+              <p className="text-white">No orders found</p>
+            )}
           </ul>
         </div>
       </div>
