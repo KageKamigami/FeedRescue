@@ -7,7 +7,8 @@ function App() {
       {/*NAVBAR*/}
       <nav className="flex justify-evenly m-5">
         <div>Food Rescue</div> <Link to="/">Home</Link>
-        <Link to="/FindFood">Find Food</Link> Sign In
+        <Link to="/FindFood">Find Food</Link>
+        <Link to="/SignIn">Sign In</Link>
       </nav>
 
       {/*BANNER*/}
@@ -29,6 +30,8 @@ function App() {
           </button>
         </div>
       </div>
+
+      {/******************************************************************************************************************************/}
 
       {/*HOW DOES IT WORK? INFO*/}
       <div className="flex flex-col items-center m-10">
