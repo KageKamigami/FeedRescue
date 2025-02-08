@@ -6,6 +6,7 @@ import FindFood from "./pages/FindFood";
 import SignIn from "./pages/SignIn";
 import RestaurantForm from "./pages/RestaurantForm";
 import Email from "./pages/Email";
+import ShipmentOrders from "./pages/ShippmentOrders";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/RestaurantForm" element={<RestaurantForm />} />
         <Route path="/Email" element={<Email />} />
+        <Route path="/ShipmentOrders" element={<ShipmentOrders />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
