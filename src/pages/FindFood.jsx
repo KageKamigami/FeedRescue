@@ -59,14 +59,29 @@ function FindFood() {
 
   return (
     <>
-    <nav className="flex justify-evenly bg-white h-20 w-full fixed top-0 shadow-lg border-none">
-            <div className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Food Rescue</div> 
-            <Link to="/" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Home</Link>
-            <Link to="/FindFood" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Find Food</Link>
-            <Link to="/SignIn" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Sign In</Link>
-    
-          </nav>
-      <div className="fixed rounded bg-[#DDC9B2] p-4 text-xl text-white w-full"></div>
+      <nav className="flex justify-evenly bg-white h-20 w-full top-0 shadow-lg border-none">
+        <div className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">
+          Food Rescue
+        </div>
+        <Link
+          to="/"
+          className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
+        >
+          Home
+        </Link>
+        <Link
+          to="/FindFood"
+          className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
+        >
+          Find Food
+        </Link>
+        <Link
+          to="/SignIn"
+          className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
+        >
+          Sign In
+        </Link>
+      </nav>
       <img className="h-100 w-full max-w-full" src={CowBanner}></img>
       <div className="gap-12 flex flex-row justify-evenly items-center bg-[#DDC9B2] p-4"></div>
       <div className="bg-[#E8DDD0]">
@@ -91,7 +106,7 @@ function FindFood() {
           ))}
         </div>
 
-        <div className="flex flex-row justify-center items-center gap-12">
+        <div className="flex flex-row justify-center items-center gap-12 -z-10">
           <div className="relative rounded-2xl overflow-hidden w-1/3">
             <img src={GrainPhoto} />
             <div className="absolute inset-0 flex flex-col justify-center items-start p-4 w-1/2">
