@@ -12,10 +12,12 @@ import CowBanner from "../assets/cow.png";
 import { useState, useEffect } from "react";
 import { db } from "../services/firebase"; // Firestore instance
 import { collection, getDocs } from "firebase/firestore";
+import RestaurantProduce from "./RestaurantProduce"; // Import RestaurantProduce
 
 function FindFood() {
   const [restaurants, setRestaurants] = useState([]);
   const [selectedAnimal, setSelectedAnimal] = useState(null); // Track selected animal
+  const [selectedRestaurant, setSelectedRestaurant] = useState(null); // Track selected restaurant
 
   useEffect(() => {
     async function fetchRestaurants() {
@@ -43,6 +45,15 @@ function FindFood() {
     { name: "Cow", image: Cow },
     { name: "Sheep", image: Sheep },
   ];
+
+  if (selectedRestaurant) {
+    return (
+      <RestaurantProduce
+        restaurantId={selectedRestaurant}
+        onBack={() => setSelectedRestaurant(null)}
+      />
+    );
+  }
 
   return (
     <>
@@ -106,7 +117,13 @@ function FindFood() {
                   className="rounded-2xl w-full"
                   alt={restaurant.name}
                 />
-                <div className="font-semibold pl-1">{restaurant.name}</div>
+                <div
+                  className="font-semibold pl-1 cursor-pointer text-blue-500 underline"
+                  onClick={() => setSelectedRestaurant(restaurant.id)} // Set selected restaurant
+                >
+                  {" "}
+                  {restaurant.name}
+                </div>
               </div>
             ))}
           </div>
