@@ -8,9 +8,22 @@ function SignIn() {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
+  // const handleSignIn = () => {
+  //   console.log(email);
+  //   navigate("/Email");
+  // };
+
   const handleSignIn = () => {
-    navigate("/Email");
+    // Ensure the email is not empty before navigating
+    if (email.trim() === "") {
+      alert("Please enter your email before proceeding.");
+      return;
+    }
+  
+    // Navigate to the Email page with the email as a query parameter
+    navigate(`/Email?email=${encodeURIComponent(email)}`);
   };
+  
 
   return (
     <div
@@ -44,7 +57,7 @@ function SignIn() {
 
       <div className="flex-grow flex items-center justify-center mt-16">
         {/* Black Transparent Box for Shadow Effect */}
-        <div className="absolute bg-black opacity-50 w-96 p-6 shadow-lg rounded-xl"></div>
+        <div className="absolute bg-black opacity-50 h-90 w-96 p-6 shadow-lg rounded-xl"></div>
 
         <div className="relative bg-gray-850 bg-opacity-50 backdrop-blur-md p-6 shadow-lg w-96 rounded-xl">
           <h2 className="text-2xl font-semibold text-center text-white">
