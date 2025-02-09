@@ -10,7 +10,9 @@ function ShipmentOrders() {
   const [orders, setOrders] = useState([]);
   const [produceList, setProduceList] = useState([]);
   const { selectedProduce, restaurantId } = useLocation().state || {}; // Use location to access passed state
-
+  const query = new URLSearchParams(useLocation().search);
+  const email = query.get("email");
+  
   // Fetch produce list from Firebase
   useEffect(() => {
     const fetchProduce = async () => {
@@ -58,13 +60,44 @@ function ShipmentOrders() {
       style={{ backgroundImage: `url(${BeachSignIn})` }}
     >
       {/* NAVBAR */}
-      <nav className="flex justify-evenly bg-white h-20 w-full fixed top-0 shadow-lg border-none">
-              <div className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Food Rescue</div> 
-              <Link to="/" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Home</Link>
-              <Link to="/FindFood" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Find Food</Link>
-              <Link to="/SignIn" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">Sign In</Link>
-      
-            </nav>
+      <nav className="flex justify-evenly bg-white h-20 w-full top-0 shadow-lg border-none">
+      <div className="flex items-center justify-center h-full w-full text-2xl text-center transition duration-0">
+        Food Rescue
+      </div>
+      <Link
+        to={`/?email=${encodeURIComponent(email || "")}`} // Pass email to Home
+        className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
+      >
+        Home
+      </Link>
+      <Link
+        to={`/FindFood?email=${encodeURIComponent(email || "")}`} // Pass email to FindFood
+        className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
+      >
+        Find Food
+      </Link>
+      <Link
+        to={`/RestaurantForm?email=${encodeURIComponent(email || "")}`} // Pass email to RestaurantForm
+        className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
+      >
+        Restaurant Form
+      </Link>
+      {email ? (
+        <Link
+          to={`/ShipmentOrders?email=${encodeURIComponent(email)}`} // Pass email to Account
+          className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
+        >
+          Account
+        </Link>
+      ) : (
+        <Link
+          to="/SignIn"
+          className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
+        >
+          Sign In
+        </Link>
+      )}
+    </nav>
 
       <div className="flex-grow flex items-center justify-center mt-16">
         {/* Black Transparent Box for Shadow Effect */}

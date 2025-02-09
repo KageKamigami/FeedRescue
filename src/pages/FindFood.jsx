@@ -13,6 +13,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { db } from "../services/firebase"; // Firestore instance
 import { collection, getDocs } from "firebase/firestore";
+import { useLocation } from "react-router-dom";
 import RestaurantProduce from "./RestaurantProduce"; // Import RestaurantProduce
 
 function FindFood() {
@@ -20,6 +21,8 @@ function FindFood() {
   const navigate = useNavigate();
   const [selectedAnimal, setSelectedAnimal] = useState(null); // Track selected animal
   const [selectedRestaurant, setSelectedRestaurant] = useState(null); // Track selected restaurant
+  const query = new URLSearchParams(useLocation().search);
+  const email = query.get("email");
 
   useEffect(() => {
     async function fetchRestaurants() {
@@ -60,31 +63,43 @@ function FindFood() {
   return (
     <>
       <nav className="flex justify-evenly bg-white h-20 w-full top-0 shadow-lg border-none">
-              <div className="flex items-center justify-center h-full w-full text-2xl text-center transition duration-0">
-                Food Rescue
-              </div>
+            <div className="flex items-center justify-center h-full w-full text-2xl text-center transition duration-0">
+              Food Rescue
+            </div>
+            <Link
+              to={`/?email=${encodeURIComponent(email || "")}`} // Pass email to Home
+              className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
+            >
+              Home
+            </Link>
+            <Link
+              to={`/FindFood?email=${encodeURIComponent(email || "")}`} // Pass email to FindFood
+              className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
+            >
+              Find Food
+            </Link>
+            <Link
+              to={`/RestaurantForm?email=${encodeURIComponent(email || "")}`} // Pass email to RestaurantForm
+              className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
+            >
+              Restaurant Form
+            </Link>
+            {email ? (
               <Link
-                to="/"
+                to={`/ShipmentOrders?email=${encodeURIComponent(email)}`} // Pass email to Account
                 className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
               >
-                Home
+                Account
               </Link>
+            ) : (
               <Link
-                to="/FindFood"
+                to="/SignIn"
                 className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
               >
-                Find Food
+                Sign In
               </Link>
-              <Link
-                to="/RestaurantForm"
-                className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
-              >
-                Restaurant Form
-              </Link>
-              <Link to="/SignIn" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">
-              Sign In
-              </Link>
-      </nav>
+            )}
+          </nav>
       <img className="h-100 w-full max-w-full" src={CowBanner}></img>
       <div className="gap-12 flex flex-row justify-evenly items-center bg-[#F2F2F2] p-4"></div>
       <div className="bg-[#FFFFFF]">
