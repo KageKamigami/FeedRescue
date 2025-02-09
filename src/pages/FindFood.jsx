@@ -60,31 +60,34 @@ function FindFood() {
   return (
     <>
       <nav className="flex justify-evenly bg-white h-20 w-full top-0 shadow-lg border-none">
-        <div className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">
-          Food Rescue
-        </div>
-        <Link
-          to="/"
-          className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
-        >
-          Home
-        </Link>
-        <Link
-          to="/FindFood"
-          className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
-        >
-          Find Food
-        </Link>
-        <Link
-          to="/SignIn"
-          className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
-        >
-          Sign In
-        </Link>
+              <div className="flex items-center justify-center h-full w-full text-2xl text-center transition duration-0">
+                Food Rescue
+              </div>
+              <Link
+                to="/"
+                className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
+              >
+                Home
+              </Link>
+              <Link
+                to="/FindFood"
+                className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
+              >
+                Find Food
+              </Link>
+              <Link
+                to="/RestaurantForm"
+                className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200"
+              >
+                Restaurant Form
+              </Link>
+              <Link to="/SignIn" className="flex items-center justify-center hover:bg-black hover:text-white h-full w-full text-2xl text-center transition duration-200">
+              Sign In
+              </Link>
       </nav>
       <img className="h-100 w-full max-w-full" src={CowBanner}></img>
-      <div className="gap-12 flex flex-row justify-evenly items-center bg-[#DDC9B2] p-4"></div>
-      <div className="bg-[#E8DDD0]">
+      <div className="gap-12 flex flex-row justify-evenly items-center bg-[#F2F2F2] p-4"></div>
+      <div className="bg-[#FFFFFF]">
         <div className="flex justify-center items-center gap-12 p-8">
           {animals.map((animal) => (
             <div
@@ -94,7 +97,7 @@ function FindFood() {
             >
               <img
                 src={animal.image}
-                className={`w-24 h-24 bg-[#DDC9B2] rounded-lg ${
+                className={`w-24 h-24 bg-[#F2F2F2] rounded-lg ${
                   selectedAnimal === animal.name
                     ? "border-4 border-yellow-500 scale-110"
                     : ""
