@@ -59,9 +59,12 @@ function RestaurantProduce({ restaurantId, onBack }) {
   };
 
   return (
+    
     <div className="p-8">
       <h1 className="text-2xl font-bold">{restaurant.name}</h1>
       <h2 className="text-lg font-semibold mt-4">Available Produce:</h2>
+
+      
 
       {produce.length > 0 ? (
         <ul className="list-disc pl-5 mt-2">
