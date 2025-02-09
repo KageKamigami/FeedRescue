@@ -52,7 +52,7 @@ function App() {
 
       {/* Rest of the component remains unchanged */}
       {/* NEW BANNER */}
-      <div className="flex h-150 pt-20 items-start justify-start flex-col w-4/6 ml-20">
+      <div className="flex h-150 pt-10 items-start justify-start flex-col w-4/6 ml-20">
         <h1 className="text-8xl text-left font-bold pt-10 pb-10">FeedRescue</h1>
         <h1 className="text-8xl font-bold pt-3 pb-10">
           A marketplace for surplus produce and leftovers
@@ -76,7 +76,7 @@ function App() {
           <div className="flex justify-center gap-16">
             <h2 className="mt-2 w-1/4 flex justify-center flex-col items-center">
               <Storefront size={200} color="#ffffff" />
-              Find the perfect Charity for you
+              Find the perfect Produce for you
             </h2>
             <h2 className="mt-2 w-1/4 flex justify-center flex-col items-center">
               <Users size={200} color="#ffffff" />
@@ -94,18 +94,18 @@ function App() {
       <div className="flex h-120 items-center justify-center flex-col w-full">
         <h1 className="text-8xl font-bold pt-10 pb-10">Our Mission.</h1>
         <h2 className="text-2xl font-light w-5/6 pl-4">
-          Every day, our households and businesses contribute to carbon emissions
-          through food waste—perfectly good scraps like lettuce, tomatoes,
-          cucumbers, and carrots end up in landfills, adding to environmental
-          harm. But what if we could turn that waste into a solution? At
-          FeedRescue, we connect local restaurants, grocery stores, and
-          households with nearby farmers in need. Instead of tossing produce
+          Every day, our households and businesses contribute to carbon
+          emissions through food waste—perfectly good scraps like lettuce,
+          tomatoes, cucumbers, and carrots end up in landfills, adding to
+          environmental harm. But what if we could turn that waste into a
+          solution? At FeedRescue, we connect local restaurants, grocery stores,
+          and households with nearby farmers in need. Instead of tossing produce
           scraps, we redirect them to support livestock, reduce waste, and
           strengthen local food systems. By joining FeedRescue, you’re not just
-          cutting down on waste—you’re fueling sustainable farming, helping small
-          businesses thrive, and promoting a healthier, more responsible food
-          cycle. s transform waste into opportunity. Join FeedRescue today and be
-          part of the change!
+          cutting down on waste—you’re fueling sustainable farming, helping
+          small businesses thrive, and promoting a healthier, more responsible
+          food cycle. s transform waste into opportunity. Join FeedRescue today
+          and be part of the change!
         </h2>
       </div>
 
@@ -116,11 +116,14 @@ function App() {
             Join the party
           </h1>
           <h2 className="text-2xl font-light text-center pb-10">
-            Let us know how you want to use the platform and we'll get you set up
+            Let us know how you want to use the platform and we'll get you set
+            up
           </h2>
           <div className="flex items-center justify-center gap-30 w-full">
             <div className="w-full h-100 flex flex-col items-center justify-start pt-10 p-2 rounded-lg border-red-500 bg-[#e3f2fd]">
-              <h1 className="text-5xl font-black pb-4">Become a partner</h1>
+              <h1 className="text-5xl font-black pb-4 text-center">
+                Become a partner
+              </h1>
               <h2 className="text-2xl text-center pb-2">
                 Salvage revenue, reach new customers, and reduce food waste.
               </h2>
